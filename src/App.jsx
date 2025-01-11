@@ -1,18 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Hero from './components/hero'
+import Product from './components/product'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-red-800 text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
-  )
+    <Router>
+      <main className='flex flex-col '>
+        <Switch>
+          <Route exact path="/">
+            <Hero />
+          </Route>
+          <Route path="/product">
+            <Product />
+          </Route>
+        </Switch>
+      </main>
+    </Router>
+  );
 }
 
-export default App
+export default App;
