@@ -212,7 +212,7 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.4 }}
             >
               <img
-                src="public/product-of/product-card-img-2.jpg"
+                src="/product-of/product-card-img-2.jpg"
                 alt="Product 2"
                 className="w-full h-full object-cover rounded-lg"
               />
