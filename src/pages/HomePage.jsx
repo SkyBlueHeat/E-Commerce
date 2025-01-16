@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
 import productsData from '../data/products.json';
+import servicesData from '../data/services.json';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -25,24 +26,32 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import slidesData from '../data/slides.json'; // slides.json dosyasının doğru konumda olduğundan emin olun
+import Featured from '../layout/Featured';
+import Services from '../layout/Services';
 
 const ProductCard = ({ title, department, originalPrice, discountedPrice, imageUrl }) => (
   <div className="border p-4 flex flex-col items-center">
-    <img 
-      src={imageUrl} 
-      alt={title} 
+    <img
+      src={imageUrl}
+      alt={title}
       className="w-full h-[300px] object-cover mb-4 transform hover:scale-105 transition-all duration-300"
     />
     <h2 className="text-xl font-bold">{title}</h2>
     <p className="text-gray-600">{department}</p>
     <div className="flex items-center mt-2">
-      <p className="text-slate-600  mr-2">${originalPrice}</p>
+      <p className="text-slate-600 mr-2">${originalPrice}</p>
       <p className="text-green-800 font-bold">${discountedPrice}</p>
     </div>
   </div>
 );
 
 export default function HomePage() {
+  const [features, setFeatures] = useState([]);
+
+  useEffect(() => {
+    setFeatures(servicesData); // servicesData JSON verisini state'e atıyoruz
+  }, []);
+
   const products = [
     {
       title: 'Graphic Design',
@@ -276,28 +285,45 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products Section */}
-      
       <div className="px-12 lg:px-24 py-12">
-  <div className="text-center mb-12">
-    <h1 className="text-4xl font-bold mb-4">Featured Products</h1>
-    <h2 className="text-xl text-gray-500 mb-6">Bestseller Products</h2>
-    <p className="text-gray-700 mb-8">Discover our top-selling products of the week!</p>
-  </div>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Featured Products</h1>
+          <h2 className="text-xl text-gray-500 mb-6">Bestseller Products</h2>
+          <p className="text-gray-700 mb-8">Discover our top-selling products of the week!</p>
+        </div>
 
-  {/* Ürün Kartları Grid */}
-  <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-    {productsData.map((product, index) => (
-      <ProductCard key={index} {...product} />
-    ))}
-  </div>
+        {/* Ürün Kartları Grid */}
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          {productsData.map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
+        </div>
 
-  {/* "Load More Products" Butonu */}
-  <div className="flex justify-center mt-8">
-    <button className="px-8 py-4 bg-transparent text-sky-400 border-sky-400 font-bold border-2 rounded-md transition-all">
-      Load More Products
-    </button>
-  </div>
+        {/* "Load More Products" Butonu */}
+        <div className="flex justify-center mt-8">
+          <button className="px-8 py-4 bg-transparent text-sky-400 border-sky-400 font-bold border-2 rounded-md transition-all">
+            Load More Products
+          </button>
+        </div>
+      </div>
+
+      <Featured />
+
+      {/* Hero Bölümü */}
+      <div className="p-8 text-center">
+  <h1 className="text-3xl font-bold mb-2">Featured Products</h1>
+  <h2 className="text-xl text-gray-500 mb-4">THE BEST SERVICES</h2>
+  <p className="text-gray-700 mb-8">Problems trying to resolve the conflict between</p>
 </div>
+
+{/* Services Kartları */}
+<div className="flex justify-center items-center gap-4 flex-wrap px-6">
+  {features.map((feature, index) => (
+    <Services key={index} {...feature} />
+  ))}
+</div>
+
+
     </>
   );
 }
