@@ -1,0 +1,32 @@
+[
+    {
+      "title": "NEW COLLECTION",
+      "subtitle": "Summer 2020",
+      "description": "We know how large objects will act, but things on a small scale.",
+      "imgSrc": "public/hero-img/hero-img.png"
+    },
+    {
+      "title": "WINTER 2021",
+      "subtitle": "Explore the Season",
+      "description": "Embrace the cold with our exclusive winter collection.",
+      "imgSrc": "public/hero-img/hero-img-9.png"
+    },
+    {
+      "title": "SPRING 2022",
+      "subtitle": "Fresh and New",
+      "description": "A new beginning with vibrant and colorful styles.",
+      "imgSrc": "public/hero-img/hero-img-4.png"
+    },
+    {
+      "title": "SPRING 2022",
+      "subtitle": "Fresh and New",
+      "description": "A new beginning with vibrant and colorful styles.",
+      "imgSrc": "public/hero-img/hero-img-7.png"
+    },
+    {
+      "title": "SPRING 2022",
+      "subtitle": "Fresh and New",
+      "description": "A new beginning with vibrant and colorful styles.",
+      "imgSrc": "public/hero-img/hero-img-8.png"
+    }
+  ]
