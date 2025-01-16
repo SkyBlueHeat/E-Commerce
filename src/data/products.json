@@ -4,70 +4,70 @@
       "department": "Department 1",
       "originalPrice": "20.00",
       "discountedPrice": "10.00",
-      "imageUrl": "public/product-clothes-cover/fixed-height.png"
+      "imageUrl": "/product-clothes-cover/fixed-height.png"
     },
     {
       "title": "Product 2",
       "department": "Department 2",
       "originalPrice": "25.00",
       "discountedPrice": "15.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-1.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-1.png"
     },
     {
       "title": "Product 3",
       "department": "Department 3",
       "originalPrice": "30.00",
       "discountedPrice": "20.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-2.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-2.png"
     },
     {
       "title": "Product 4",
       "department": "Department 4",
       "originalPrice": "40.00",
       "discountedPrice": "30.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-3.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-3.png"
     },
     {
       "title": "Product 5",
       "department": "Department 5",
       "originalPrice": "35.00",
       "discountedPrice": "25.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-4.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-4.png"
     },
     {
       "title": "Product 6",
       "department": "Department 6",
       "originalPrice": "50.00",
       "discountedPrice": "40.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-5.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-5.png"
     },
     {
       "title": "Product 7",
       "department": "Department 7",
       "originalPrice": "60.00",
       "discountedPrice": "50.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-6.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-6.png"
     },
     {
       "title": "Product 8",
       "department": "Department 8",
       "originalPrice": "45.00",
       "discountedPrice": "35.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-7.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-7.png"
     },
     {
       "title": "Product 9",
       "department": "Department 9",
       "originalPrice": "70.00",
       "discountedPrice": "60.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5.png"
     },
     {
       "title": "Product 10",
       "department": "Department 10",
       "originalPrice": "80.00",
       "discountedPrice": "70.00",
-      "imageUrl": "public/product-clothes-cover/product-cover-5-3.png"
+      "imageUrl": "/product-clothes-cover/product-cover-5-3.png"
     }
   ]
   

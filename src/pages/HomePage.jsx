@@ -176,7 +176,7 @@ export default function HomePage() {
             transition={{ duration: 1 }}
           >
             <img
-              src="public/product-of/product-card-img-1.jpg"
+              src="/product-of/product-card-img-1.jpg"
               alt="Product 1"
               className="w-full h-full object-cover rounded-lg"
             />
@@ -246,7 +246,7 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.8 }}
             >
               <img
-                src="public/product-of/product-card-img-3.jpg"
+                src="/product-of/product-card-img-3.jpg"
                 alt="Product 3"
                 className="w-full h-full object-cover rounded-lg"
               />
