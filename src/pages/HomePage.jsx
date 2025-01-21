@@ -339,7 +339,7 @@ export default function HomePage() {
       ))}
     </div>
   </div>
-</Layout>
+</Layout >
 
 
     </>
