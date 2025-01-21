@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
 import productsData from '../data/products.json';
 import servicesData from '../data/services.json';
-
+import FeaturedPosts from '../layout/Featuredposts';
+import Card from "../components/Card";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,6 +29,7 @@ import {
 import slidesData from '../data/slides.json'; // slides.json dosyasının doğru konumda olduğundan emin olun
 import Featured from '../layout/Featured';
 import Services from '../layout/Services';
+import Layout from '../layout/Featuredposts';
 
 const ProductCard = ({ title, department, originalPrice, discountedPrice, imageUrl }) => (
   <div className="border p-4 flex flex-col items-center">
@@ -47,7 +49,13 @@ const ProductCard = ({ title, department, originalPrice, discountedPrice, imageU
 
 export default function HomePage() {
   const [features, setFeatures] = useState([]);
+  const [posts, setPosts] = useState([]);
 
+  useEffect(() => {
+    fetch("src/data/posts.json")
+      .then((response) => response.json())
+      .then((data) => setPosts(data));
+  }, []);
   useEffect(() => {
     setFeatures(servicesData); // servicesData JSON verisini state'e atıyoruz
   }, []);
@@ -322,6 +330,16 @@ export default function HomePage() {
     <Services key={index} {...feature} />
   ))}
 </div>
+{/* Post */}
+<Layout>
+  <div className="container mx-auto px-10 py-8">
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:gap-8">
+      {posts.map((post, index) => (
+        <Card key={index} {...post} />
+      ))}
+    </div>
+  </div>
+</Layout>
 
 
     </>
