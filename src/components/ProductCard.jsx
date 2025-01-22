@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function ProductCard({ name, price, image }) {
   return (
     <div className="border rounded-lg p-4 shadow-md">
@@ -7,3 +9,10 @@ export default function ProductCard({ name, price, image }) {
     </div>
   );
 }
+
+// PropTypes ile doğrulama
+ProductCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+};

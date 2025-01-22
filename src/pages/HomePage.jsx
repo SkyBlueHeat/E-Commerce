@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
 import productsData from '../data/products.json';
 import servicesData from '../data/services.json';
-import FeaturedPosts from '../layout/Featuredposts';
+import PropTypes from 'prop-types';
 import Card from "../components/Card";
 // Import Swiper styles
 import 'swiper/css';
@@ -41,11 +41,20 @@ const ProductCard = ({ title, department, originalPrice, discountedPrice, imageU
     <h2 className="text-xl font-bold">{title}</h2>
     <p className="text-gray-600">{department}</p>
     <div className="flex items-center mt-2">
-      <p className="text-slate-600 mr-2">${originalPrice}</p>
-      <p className="text-green-800 font-bold">${discountedPrice}</p>
+      <p className="text-slate-600 mr-2">${parseFloat(originalPrice).toFixed(2)}</p>
+      <p className="text-green-800 font-bold">${parseFloat(discountedPrice).toFixed(2)}</p>
     </div>
   </div>
 );
+
+ProductCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  department: PropTypes.string.isRequired,
+  originalPrice: PropTypes.number.isRequired,
+  discountedPrice: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+};
+
 
 export default function HomePage() {
   const [features, setFeatures] = useState([]);
@@ -60,23 +69,7 @@ export default function HomePage() {
     setFeatures(servicesData); // servicesData JSON verisini state'e atıyoruz
   }, []);
 
-  const products = [
-    {
-      title: 'Graphic Design',
-      department: 'English Department',
-      originalPrice: '16.48',
-      discountedPrice: '6.48',
-      imageUrl: 'link-to-image-1.jpg',
-    },
-    {
-      title: 'Graphic Design',
-      department: 'English Department',
-      originalPrice: '16.48',
-      discountedPrice: '6.48',
-      imageUrl: 'link-to-image-2.jpg',
-    },
-    // Diğer ürünler
-  ];
+
 
   const settings = {
     infinite: true,

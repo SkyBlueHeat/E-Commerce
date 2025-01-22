@@ -1,6 +1,6 @@
-import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart, faEye } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 const Card = ({ image, department, title, description, sales, price, discount, colors, lessons, hours, rating }) => {
   return (
@@ -53,6 +53,21 @@ const Card = ({ image, department, title, description, sales, price, discount, c
       </div>
     </div>
   );
+};
+
+// PropTypes ile doğrulama
+Card.propTypes = {
+  image: PropTypes.string.isRequired,
+  department: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  sales: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  discount: PropTypes.number.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  lessons: PropTypes.number.isRequired,
+  hours: PropTypes.number.isRequired,
+  rating: PropTypes.number.isRequired,
 };
 
 export default Card;
