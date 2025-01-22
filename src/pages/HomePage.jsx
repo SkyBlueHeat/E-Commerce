@@ -65,6 +65,7 @@ export default function HomePage() {
       .then((response) => response.json())
       .then((data) => setPosts(data));
   }, []);
+  
   useEffect(() => {
     setFeatures(servicesData); // servicesData JSON verisini state'e atıyoruz
   }, []);
