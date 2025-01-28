@@ -6,6 +6,7 @@ import servicesData from '../data/services.json';
 import PropTypes from 'prop-types';
 import Card from "../components/Card";
 import postsData from '../data/posts.json';
+// import Footer from '../components/Footer';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,7 +29,7 @@ import {
   faRedditAlien,
 } from '@fortawesome/free-brands-svg-icons';
 
-import slidesData from '../data/slides.json'; // slides.json dosyasının doğru konumda olduğundan emin olun
+import slidesData from '../data/slides.json';
 import Featured from '../layout/Featured';
 import Services from '../layout/Services';
 import Layout from '../layout/Featuredposts';
@@ -340,7 +341,7 @@ export default function HomePage() {
       </div>
     </Layout>
 
-
+    
     </>
   );
 }
