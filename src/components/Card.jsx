@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const Card = ({ image, department, title, description, sales, price, discount, colors, lessons, hours, rating }) => {
   return (
     <div className="overflow-hidden transform transition-transform hover:scale-105 flex flex-col sm:flex-row max-w-2xl mx-auto my-4">
-      
       {/* Sol tarafı tamamen kaplayan resim */}
       <div className="w-full sm:w-64 relative flex-shrink-0">
         <img src={image} alt={title} className="h-full w-full object-cover" />
@@ -13,13 +12,13 @@ const Card = ({ image, department, title, description, sales, price, discount, c
 
         {/* Resmin alt kısmında ikonlar */}
         <div className="absolute bottom-2 left-2 right-2 flex justify-between px-4">
-          <button className="bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition">
+          <button aria-label="Add to wishlist" className="bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition">
             <FontAwesomeIcon icon={faHeart} className="text-white" />
           </button>
-          <button className="bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition">
+          <button aria-label="Add to cart" className="bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition">
             <FontAwesomeIcon icon={faShoppingCart} className="text-white" />
           </button>
-          <button className="bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition">
+          <button aria-label="View product" className="bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition">
             <FontAwesomeIcon icon={faEye} className="text-white" />
           </button>
         </div>

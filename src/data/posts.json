@@ -1,29 +1,28 @@
 [
-    {
-      "image": "posts-img/posts-img-1.png",
-      "department": "English Department",
-      "title": "Graphic Design",
-      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
-      "sales": 15,
-      "price": 16.48,
-      "discount": 6.48,
-      "colors": ["#FF5733", "#33FFBD", "#335CFF", "#000000"],
-      "lessons": 64,
-      "hours": 22,
-      "rating": 4.9
-    },
-    {
-      "image": "posts-img/posts-img-2.png",
-      "department": "English Department",
-      "title": "Graphic Design",
-      "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
-      "sales": 15,
-      "price": 16.48,
-      "discount": 6.48,
-      "colors": ["#FF5733", "#33FFBD", "#335CFF", "#000000"],
-      "lessons": 64,
-      "hours": 22,
-      "rating": 4.9
-    }
-  ]
-  
+  {
+    "image": "posts-img/posts-img-1.png",
+    "department": "English Department",
+    "title": "Graphic Design",
+    "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+    "sales": 15,
+    "price": 16.48,
+    "discount": 6.48,
+    "colors": ["#FF5733", "#33FFBD", "#335CFF", "#000000"],
+    "lessons": 64,
+    "hours": 22,
+    "rating": 4.9
+  },
+  {
+    "image": "posts-img/posts-img-2.png",
+    "department": "English Department",
+    "title": "Graphic Design",
+    "description": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+    "sales": 15,
+    "price": 16.48,
+    "discount": 6.48,
+    "colors": ["#FF5733", "#33FFBD", "#335CFF", "#000000"],
+    "lessons": 64,
+    "hours": 22,
+    "rating": 4.9
+  }
+]

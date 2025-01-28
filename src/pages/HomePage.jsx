@@ -5,10 +5,12 @@ import productsData from '../data/products.json';
 import servicesData from '../data/services.json';
 import PropTypes from 'prop-types';
 import Card from "../components/Card";
+import postsData from '../data/posts.json';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
+// import axios from 'axios';
 
 // Import required modules
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -32,6 +34,7 @@ import Services from '../layout/Services';
 import Layout from '../layout/Featuredposts';
 
 const ProductCard = ({ title, department, originalPrice, discountedPrice, imageUrl }) => (
+  
   <div className="border p-4 flex flex-col items-center">
     <img
       src={imageUrl}
@@ -41,8 +44,8 @@ const ProductCard = ({ title, department, originalPrice, discountedPrice, imageU
     <h2 className="text-xl font-bold">{title}</h2>
     <p className="text-gray-600">{department}</p>
     <div className="flex items-center mt-2">
-      <p className="text-slate-600 mr-2">${parseFloat(originalPrice).toFixed(2)}</p>
-      <p className="text-green-800 font-bold">${parseFloat(discountedPrice).toFixed(2)}</p>
+      <p className="text-slate-600 mr-2">${originalPrice}</p>
+      <p className="text-green-800 font-bold">${discountedPrice}</p>
     </div>
   </div>
 );
@@ -55,22 +58,24 @@ ProductCard.propTypes = {
   imageUrl: PropTypes.string.isRequired,
 };
 
-
 export default function HomePage() {
   const [features, setFeatures] = useState([]);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("src/data/posts.json")
-      .then((response) => response.json())
-      .then((data) => setPosts(data));
-  }, []);
-  
+    // posts.json verisini doğrudan state'e set ediyoruz
+    setPosts(postsData);
+  }, []); // Boş dependency array, sadece component mount olduğunda çalışır
   useEffect(() => {
     setFeatures(servicesData); // servicesData JSON verisini state'e atıyoruz
   }, []);
+  if (posts.length === 0) {
+    return <div>Loading...</div>;
+  }
+  
+  
 
-
+ 
 
   const settings = {
     infinite: true,
@@ -326,14 +331,14 @@ export default function HomePage() {
 </div>
 {/* Post */}
 <Layout>
-  <div className="container mx-auto px-10 py-8">
-    <div className="flex flex-col sm:flex-row sm:justify-between sm:gap-8">
-      {posts.map((post, index) => (
-        <Card key={index} {...post} />
-      ))}
-    </div>
-  </div>
-</Layout >
+      <div className="container mx-auto px-10 py-8">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:gap-8">
+          {posts.map((post, index) => (
+            <Card key={index} {...post} />
+          ))}
+        </div>
+      </div>
+    </Layout>
 
 
     </>
