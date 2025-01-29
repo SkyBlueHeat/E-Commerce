@@ -181,6 +181,8 @@ export default function Header() {
         >
           <ul className="flex flex-col space-y-4 py-4 px-6 text-gray-600">
             <li><a href="/" className="hover:underline text-xl">Home</a></li>
+            <li><a href="/shop" className="hover:underline text-xl">Explore</a></li>
+            
             <li 
               className="relative"
             >
