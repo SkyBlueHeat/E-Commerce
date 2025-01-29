@@ -3,9 +3,9 @@
 
 // const SocialIcons = () => (
 //   <div className="flex gap-3">
-//     <motion.a whileHover={{ scale: 1.2 }} href="#" className="text-blue-500 text-xl">🔵</motion.a>
-//     <motion.a whileHover={{ scale: 1.2 }} href="#" className="text-pink-500 text-xl">🎀</motion.a>
-//     <motion.a whileHover={{ scale: 1.2 }} href="#" className="text-blue-400 text-xl">🐦</motion.a>
+//     <motion.a whileHover={{ scale: 1.2 }} href="#" className="text-blue-500 text-xl"></motion.a>
+//     <motion.a whileHover={{ scale: 1.2 }} href="#" className="text-pink-500 text-xl"></motion.a>
+//     <motion.a whileHover={{ scale: 1.2 }} href="#" className="text-blue-400 text-xl"></motion.a>
 //   </div>
 // );
 
