@@ -96,13 +96,17 @@ export default function Header() {
           <div className="lg:flex hidden space-x-6 text-gray-600 relative flex-grow justify-center">
             <ul className="flex space-x-6">
               <motion.li whileHover={{ scale: 1.2,  }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
-                <a href="#" className="hover:underline text-xl">Home</a>
+                <a href="/" className="hover:underline text-xl">Home</a>
+              </motion.li>
+              <motion.li whileHover={{ scale: 1.2,  }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
+                <a href="/shop" className="hover:underline text-xl">Explore</a>
               </motion.li>
               <motion.li 
                 className="relative" 
                 transition={{ duration: 0.3 }}
               >
                 <button
+                
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="hover:underline focus:outline-none text-xl"
                 >
@@ -114,18 +118,18 @@ export default function Header() {
                   >
                     <ul className="w-1/2 border-r">
                       <li className="px-4 py-2 font-bold">Men</li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/men/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/men/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/men/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/men/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
                     </ul>
                     <ul className="w-1/2">
                       <li className="px-4 py-2 font-bold">Women</li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Watch</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="#" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/women/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/women/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/women/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/women/watch" className="block px-4 py-2 hover:bg-gray-100">Watch</a></motion.li>
+                      <motion.li whileHover={{ }}><a href="/shop/women/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
                     </ul>
                   </div>
                 )}
@@ -176,7 +180,7 @@ export default function Header() {
           transition={{ duration: 0.3 }}
         >
           <ul className="flex flex-col space-y-4 py-4 px-6 text-gray-600">
-            <li><a href="#" className="hover:underline text-xl">Home</a></li>
+            <li><a href="/" className="hover:underline text-xl">Home</a></li>
             <li 
               className="relative"
             >
@@ -190,18 +194,18 @@ export default function Header() {
                 <div className="absolute left-0 bg-white border rounded shadow-lg w-80">
                   <ul>
                     <li className="px-4 py-2 font-bold">Men</li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
+                    <motion.li><a href="/shop/men/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
+                    <motion.li><a href="/shop/men/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
+                    <motion.li><a href="/shop/men/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
+                    <motion.li><a href="/shop/men/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
                   </ul>
                   <ul>
                     <li className="px-4 py-2 font-bold">Women</li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Watch</a></motion.li>
-                    <motion.li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
+                    <motion.li><a href="/shop/women/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
+                    <motion.li><a href="/shop/women/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
+                    <motion.li><a href="/shop/women/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
+                    <motion.li><a href="/shop/women/watch" className="block px-4 py-2 hover:bg-gray-100">Watch</a></motion.li>
+                    <motion.li><a href="/shop/women/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
                   </ul>
                 </div>
               )}

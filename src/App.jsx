@@ -1,18 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
-import PageContent from "./layout/PageContent";
-import HomePage from "./pages/HomePage";
 
+import Footer from "./layout/Footer";
+import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";  // ShopPage'i ekliyoruz
 
 
 function App() {
   return (
     <Router>
-      <Header />
-      <PageContent />
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/shop" element={<ShopPage />} /> {/* ShopPage için route ekliyoruz */}
       </Routes>
       <Footer />
     </Router>

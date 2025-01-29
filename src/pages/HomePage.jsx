@@ -6,6 +6,7 @@ import servicesData from '../data/services.json';
 import PropTypes from 'prop-types';
 import Card from "../components/Card";
 import postsData from '../data/posts.json';
+import PageContent from "../layout/PageContent";
 // import Footer from '../components/Footer';
 // Import Swiper styles
 import 'swiper/css';
@@ -33,6 +34,7 @@ import slidesData from '../data/slides.json';
 import Featured from '../layout/Featured';
 import Services from '../layout/Services';
 import Layout from '../layout/Featuredposts';
+import Header from '../layout/Header';
 
 const ProductCard = ({ title, department, originalPrice, discountedPrice, imageUrl }) => (
   
@@ -103,8 +105,10 @@ export default function HomePage() {
 
   return (
     <>
+    <Header/>
       {/* Hero Bölümü */}
       <div className="flex justify-center items-center py-8">
+        
         {/* Swiper Slider */}
         <Swiper
           spaceBetween={50}
@@ -291,7 +295,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      <PageContent />
       {/* Featured Products Section */}
       <div className="px-12 lg:px-24 py-12">
         <div className="text-center mb-12">
