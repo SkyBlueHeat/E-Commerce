@@ -7,7 +7,7 @@ import ShopHeader from "./layout/Shop/ShopHeader"; // ShopPage için ShopHeader
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         {/* HomePage için Header, ShopPage için ShopHeader */}
         <Route path="/" element={<><Header /><HomePage /></>} />
