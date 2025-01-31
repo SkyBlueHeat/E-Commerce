@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 2,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 3,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 4,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 5,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 6,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 7,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 8,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 9,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 10,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 11,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    },
+    {
+      "id": 12,
+      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
+      "title": "Graphic Design",
+      "price": "$15.48  $48"
+    }
+  ]
+}

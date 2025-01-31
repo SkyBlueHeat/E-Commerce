@@ -66,11 +66,10 @@ export default function HomePage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // posts.json verisini doğrudan state'e set ediyoruz
     setPosts(postsData);
-  }, []); // Boş dependency array, sadece component mount olduğunda çalışır
+  }, []); 
   useEffect(() => {
-    setFeatures(servicesData); // servicesData JSON verisini state'e atıyoruz
+    setFeatures(servicesData);
   }, []);
   if (posts.length === 0) {
     return <div>Loading...</div>;
@@ -82,7 +81,7 @@ export default function HomePage() {
 
   const settings = {
     infinite: true,
-    speed: 1000,
+    speed: 3000,
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,

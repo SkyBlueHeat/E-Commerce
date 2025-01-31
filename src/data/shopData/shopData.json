@@ -1,0 +1,28 @@
+[
+    {
+      "image": "/shop-img/card-item.png",
+      "category": "Clothes",
+      "count": 5
+    },
+    {
+      "image": "/shop-img/col-md-4.png",
+      "category": "Shoes",
+      "count": 8
+    },
+    {
+      "image": "/shop-img/media-bg-cover-2.png",
+      "category": "Accessories",
+      "count": 10
+    },
+    {
+      "image": "/shop-img/media-bg-cover-3.png",
+      "category": "Bags",
+      "count": 6
+    },
+    {
+      "image": "/shop-img/media-bg-cover.png",
+      "category": "Bags",
+      "count": 6
+    }
+  ]
+  
