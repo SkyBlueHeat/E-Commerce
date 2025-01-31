@@ -114,8 +114,8 @@ export default function HomePage() {
           slidesPerView={1}
           grabCursor={true}
           loop={true}
-          autoplay={{ delay: 2500 }}
-          speed={1000}
+          autoplay={{ delay: 1000 }}
+          speed={3000}
           modules={[Navigation, Autoplay]}
           className="mySwiper w-full px-4 md:px-8 lg:px-16"
         >

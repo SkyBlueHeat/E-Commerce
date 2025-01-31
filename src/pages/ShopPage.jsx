@@ -68,10 +68,11 @@ function ShopPage() {
       <ShopSection />
 
       {/* Header with Results Count */}
-      <header className="flex justify-around items-center mb-4">
-      <div className="text-gray-600">Showing all 12 results</div>
-  <div className="flex items-center space-x-4">
-    <div className="flex items-center">
+      <header className="flex flex-col sm:flex-row sm:justify-around items-center mb-4 p-4">
+  <div className="text-gray-600 text-center sm:text-left">Showing all 12 results</div>
+  
+  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 sm:w-auto w-full">
+    <div className="flex items-center mb-4 sm:mb-0">
       <span className="mr-2 text-gray-600">Views:</span>
       <button className="focus:outline-none">
         <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -84,12 +85,17 @@ function ShopPage() {
         </svg>
       </button>
     </div>
-    <select className="border border-gray-300 rounded p-1 text-sm">
-      <option>Popularity</option>
-    </select>
-    <button className="bg-blue-500 text-white px-4 py-2 rounded">Filter</button>
+
+    <div className="flex items-center mb-4 sm:mb-0 w-full sm:w-auto">
+      <select className="border border-gray-300 rounded p-1 text-sm w-full sm:w-auto">
+        <option>Popularity</option>
+      </select>
+      <button className="bg-blue-500 text-white px-4 py-2 rounded w-full sm:w-auto">Filter</button>
+    </div>
   </div>
-      </header>
+</header>
+
+
 
       <div className="flex flex-wrap justify-center gap-4 px-4">
         {items.map((item) => (
