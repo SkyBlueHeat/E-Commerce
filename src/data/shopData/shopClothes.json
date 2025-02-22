@@ -2,75 +2,147 @@
   "products": [
     {
       "id": 1,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Basic Beyaz T-Shirt",
+      "price": 29.99,
+      "description": "Pamuklu kumaştan üretilmiş, rahat kesim basic beyaz t-shirt",
+      "category": "tshirt",
+      "image": "images/products/tshirt-1.jpg",
+      "rating": { "rate": 4.5, "count": 120 }
     },
     {
       "id": 2,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Spor Ayakkabı",
+      "price": 149.99,
+      "description": "Hafif ve konforlu günlük spor ayakkabı",
+      "category": "shoes",
+      "image": "images/products/shoes-1.jpg",
+      "rating": { "rate": 4.8, "count": 85 }
     },
     {
       "id": 3,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Kot Pantolon",
+      "price": 89.99,
+      "description": "Slim fit kesim, yüksek kalite kot pantolon",
+      "category": "pants",
+      "image": "images/products/pants-1.jpg",
+      "rating": { "rate": 4.2, "count": 95 }
     },
     {
       "id": 4,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Deri Ceket",
+      "price": 199.99,
+      "description": "Klasik kesim siyah deri ceket",
+      "category": "jacket",
+      "image": "images/products/jacket-1.jpg",
+      "rating": { "rate": 4.6, "count": 75 }
     },
     {
       "id": 5,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Güneş Gözlüğü",
+      "price": 59.99,
+      "description": "UV korumalı modern tasarım güneş gözlüğü",
+      "category": "accessories",
+      "image": "images/products/sunglasses-1.jpg",
+      "rating": { "rate": 4.3, "count": 60 }
     },
     {
       "id": 6,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Yazlık Elbise",
+      "price": 79.99,
+      "description": "Çiçek desenli, hafif kumaş yazlık elbise",
+      "category": "dress",
+      "image": "images/products/dress-1.jpg",
+      "rating": { "rate": 4.7, "count": 110 }
     },
     {
       "id": 7,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Deri Çanta",
+      "price": 129.99,
+      "description": "Gerçek deri, geniş hacimli omuz çantası",
+      "category": "bag",
+      "image": "images/products/bag-1.jpg",
+      "rating": { "rate": 4.4, "count": 88 }
     },
     {
       "id": 8,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Baskılı T-Shirt",
+      "price": 34.99,
+      "description": "Özel tasarım baskılı pamuklu t-shirt",
+      "category": "tshirt",
+      "image": "images/products/tshirt-2.jpg",
+      "rating": { "rate": 4.1, "count": 70 }
     },
     {
       "id": 9,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Koşu Ayakkabısı",
+      "price": 169.99,
+      "description": "Profesyonel koşu ayakkabısı, özel taban teknolojisi",
+      "category": "shoes",
+      "image": "images/products/shoes-2.jpg",
+      "rating": { "rate": 4.9, "count": 150 }
     },
     {
       "id": 10,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Kargo Pantolon",
+      "price": 79.99,
+      "description": "Çok cepli, rahat kesim kargo pantolon",
+      "category": "pants",
+      "image": "images/products/pants-2.jpg",
+      "rating": { "rate": 4.0, "count": 65 }
     },
     {
       "id": 11,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Kolye",
+      "price": 44.99,
+      "description": "Zarif tasarım, gümüş kaplama kolye",
+      "category": "accessories",
+      "image": "images/products/necklace-1.jpg",
+      "rating": { "rate": 4.5, "count": 92 }
     },
     {
       "id": 12,
-      "image": "/shop-img/Shop-Product-card-img/product-cover-5.png",
-      "title": "Graphic Design",
-      "price": "$15.48  $48"
+      "title": "Spor Çanta",
+      "price": 69.99,
+      "description": "Dayanıklı malzeme, geniş hacimli spor çantası",
+      "category": "bag",
+      "image": "images/products/bag-2.jpg",
+      "rating": { "rate": 4.3, "count": 78 }
+    },
+    {
+      "id": 13,
+      "title": "Kapüşonlu Sweatshirt",
+      "price": 89.99,
+      "description": "Kalın kumaş, cepli kapüşonlu sweatshirt",
+      "category": "jacket",
+      "image": "images/products/sweatshirt-1.jpg",
+      "rating": { "rate": 4.6, "count": 105 }
+    },
+    {
+      "id": 14,
+      "title": "Mini Elbise",
+      "price": 69.99,
+      "description": "Şık tasarım, düz renk mini elbise",
+      "category": "dress",
+      "image": "images/products/dress-2.jpg",
+      "rating": { "rate": 4.2, "count": 83 }
+    },
+    {
+      "id": 15,
+      "title": "Polo Yaka T-Shirt",
+      "price": 39.99,
+      "description": "Klasik kesim, polo yaka pamuklu t-shirt",
+      "category": "tshirt",
+      "image": "images/products/tshirt-3.jpg",
+      "rating": { "rate": 4.4, "count": 97 }
+    },
+    {
+      "id": 16,
+      "title": "Casual Ayakkabı",
+      "price": 129.99,
+      "description": "Günlük kullanım için rahat casual ayakkabı",
+      "category": "shoes",
+      "image": "images/products/shoes-3.jpg",
+      "rating": { "rate": 4.3, "count": 72 }
     }
   ]
 }

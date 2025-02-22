@@ -1,42 +1,62 @@
 /* eslint-disable react/prop-types */
 
+import React from 'react';
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
 function ProductCard({ product }) {
-    if (!product) {
-      return <div>Product not found</div>;
-    }
-  
-    // Fiyatı iki parçaya ayıralım
-    const priceParts = product.price.split("  "); // Fiyatı ayırıyoruz
-    const currentPrice = priceParts[0]; // İlk kısmı (örneğin "$15.48")
-    const oldPrice = priceParts[1]; // İkinci kısmı (örneğin "$48")
-  
-    return (
-      <div className="overflow-hidden w-full"> {/* Kartın genişliğini tam genişlik yapıyoruz */}
-        <div className="w-full h-96 relative"> {/* Resim için bir container oluşturuyoruz */}
-          <img 
-            src={product.image} 
-            alt={product.title} 
-            className="absolute inset-0 w-full h-full object-contain" 
-          /> {/* Resmi container'a sığdırıyoruz, kesilmesin diye object-contain kullanıyoruz */}
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.2 }}
+      className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-xs"
+    >
+      <Link to={`/product/${product.id}`} className="block">
+        <div className="relative pb-[100%] overflow-hidden">
+          <img
+            src={product.image}
+            alt={product.title}
+            className="absolute inset-0 w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+          />
         </div>
-        <div className="p-4 flex flex-col items-center justify-center"> {/* İçeriği ortalayacak şekilde düzenliyoruz */}
-          <h3 className="text-base font-bold text-center">{product.title}</h3> {/* Başlık ortalanmış */}
-          
-          <p className="text-sm text-gray-700 text-center">
-            <span className="font-bold text-slate-400">{currentPrice}</span> {/* İlk kısmı siyah */}
-            <span className="font-bold text-green-500 ml-2">{oldPrice}</span> {/* İkinci kısmı kırmızı */}
+        <div className="p-4">
+          <h3 className="text-lg font-semibold text-gray-800 mb-2 truncate">
+            {product.title}
+          </h3>
+          <p className="text-gray-600 text-sm mb-2 line-clamp-2">
+            {product.description}
           </p>
-  
-          <div className="flex space-x-2 mt-2 justify-center"> {/* Butonları ortalıyoruz */}
-            <span className="w-4 h-4 bg-blue-500 rounded-full"></span>
-            <span className="w-4 h-4 bg-green-500 rounded-full"></span>
-            <span className="w-4 h-4 bg-red-500 rounded-full"></span>
-            <span className="w-4 h-4 bg-yellow-300 rounded-full"></span>
+          <div className="flex justify-between items-center">
+            <span className="text-xl font-bold text-blue-600">
+              ₺{product.price.toFixed(2)}
+            </span>
+            <div className="flex items-center">
+              <span className="text-yellow-400 mr-1">★</span>
+              <span className="text-sm text-gray-600">
+                {product.rating.rate} ({product.rating.count})
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-    );
-  }
-  
-  export default ProductCard;
+      </Link>
+    </motion.div>
+  );
+}
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    rating: PropTypes.shape({
+      rate: PropTypes.number.isRequired,
+      count: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export default ProductCard;
   

@@ -1,12 +1,48 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { motion } from 'framer-motion';
+import { faSearch, faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useUser } from '../context/UserContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isLoginView, setIsLoginView] = useState(true);
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
+
+  const modalVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 50 }
+  };
+
+  const formVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
+  };
+
+  const handleLogout = () => {
+    logout();
+    localStorage.removeItem('token');
+    navigate('/');
+  };
 
   return (
     <>
@@ -95,127 +131,261 @@ export default function Header() {
           {/* Desktop Menu Items */}
           <div className="lg:flex hidden space-x-6 text-gray-600 relative flex-grow justify-center">
             <ul className="flex space-x-6">
-              <motion.li whileHover={{ scale: 1.2,  }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
-                <a href="/" className="hover:underline text-xl">Home</a>
+              <motion.li whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
+                <Link to="/" className="hover:underline text-xl">Home</Link>
               </motion.li>
-              <motion.li whileHover={{ scale: 1.2,  }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
-                <a href="/shop" className="hover:underline text-xl">Explore</a>
+              <motion.li whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
+                <Link to="/shop" className="hover:underline text-xl">Shop</Link>
               </motion.li>
-              <motion.li 
-                className="relative" 
-                transition={{ duration: 0.3 }}
-              >
-                <button
-                
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="hover:underline focus:outline-none text-xl"
-                >
-                  Shop ˅
-                </button>
-                {isDropdownOpen && (
-                  <div
-                    className="absolute top-full mt-2 bg-white border rounded shadow-lg w-80 flex right-0 z-20"
-                  >
-                    <ul className="w-1/2 border-r">
-                      <li className="px-4 py-2 font-bold">Men</li>
-                      <motion.li whileHover={{ }}><a href="/shop/men/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="/shop/men/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="/shop/men/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="/shop/men/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
-                    </ul>
-                    <ul className="w-1/2">
-                      <li className="px-4 py-2 font-bold">Women</li>
-                      <motion.li whileHover={{ }}><a href="/shop/women/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="/shop/women/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="/shop/women/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="/shop/women/watch" className="block px-4 py-2 hover:bg-gray-100">Watch</a></motion.li>
-                      <motion.li whileHover={{ }}><a href="/shop/women/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
-                    </ul>
-                  </div>
-                )}
+              <motion.li whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
+                <Link to="/about" className="hover:underline text-xl">About</Link>
               </motion.li>
-              <motion.li whileHover={{ scale: 1.2,  }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
-                <a href="#" className="hover:underline text-xl">About</a>
+              <motion.li whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
+                <Link to="/blog" className="hover:underline text-xl">Blog</Link>
               </motion.li>
-              <motion.li whileHover={{ scale: 1.2, }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
-                <a href="#" className="hover:underline text-xl">Blog</a>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.2,  }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
-                <a href="#" className="hover:underline text-xl">Contact</a>
+              <motion.li whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.3 }}>
+                <Link to="/contact" className="hover:underline text-xl">Contact</Link>
               </motion.li>
             </ul>
           </div>
 
-          {/* Login/Register */}
-          <motion.div 
-            className="flex space-x-4"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <a href="#" className="text-gray-600 hover:underline">Login / Register</a>
-          </motion.div>
+          {/* User Section */}
+          <div className="flex items-center space-x-6">
+            {user ? (
+              <>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="text-gray-600 hover:text-blue-500"
+                >
+                  <FontAwesomeIcon icon={faSearch} className="text-xl" />
+                </motion.button>
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                  <Link to="/favorites" className="text-gray-600 hover:text-blue-500">
+                    <FontAwesomeIcon icon={faHeart} className="text-xl" />
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                  <Link to="/cart" className="text-gray-600 hover:text-blue-500">
+                    <FontAwesomeIcon icon={faShoppingCart} className="text-xl" />
+                  </Link>
+                </motion.div>
+                <div className="relative group">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    className="flex items-center space-x-2 text-gray-600 hover:text-blue-500"
+                  >
+                    <FontAwesomeIcon icon={faUser} className="text-xl" />
+                    <span>{user.name}</span>
+                  </motion.button>
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-50">
+                    <Link to="/profile" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Profile
+                    </Link>
+                    <Link to="/orders" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Orders
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <Link
+                to="/auth"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600"
+              >
+                Login / Register
+              </Link>
+            )}
+          </div>
         </motion.div>
       </nav>
 
-      {/* Hamburger Menu for Mobile */}
+      {/* Auth Modal */}
+      <AnimatePresence>
+        {isAuthModalOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsAuthModalOpen(false)}
+          >
+            <motion.div
+              className="bg-white rounded-lg p-8 w-full max-w-md relative"
+              variants={modalVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                onClick={() => setIsAuthModalOpen(false)}
+              >
+                ✕
+              </button>
+
+              {/* Form Container */}
+              <div className="overflow-hidden">
+                <AnimatePresence initial={false} custom={isLoginView ? 1 : -1}>
+                  {isLoginView ? (
+                    <motion.div
+                      key="login"
+                      custom={1}
+                      variants={formVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        x: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 }
+                      }}
+                    >
+                      <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
+                      <form className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700">Email</label>
+                          <input
+                            type="email"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter your email"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700">Password</label>
+                          <input
+                            type="password"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter your password"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+                        >
+                          Login
+                        </button>
+                      </form>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="register"
+                      custom={-1}
+                      variants={formVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        x: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 }
+                      }}
+                    >
+                      <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
+                      <form className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700">Full Name</label>
+                          <input
+                            type="text"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter your full name"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700">Email</label>
+                          <input
+                            type="email"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter your email"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700">Password</label>
+                          <input
+                            type="password"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter your password"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700">Confirm Password</label>
+                          <input
+                            type="password"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Confirm your password"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+                        >
+                          Register
+                        </button>
+                      </form>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Toggle Button */}
+                <div className="mt-4 text-center">
+                  <button
+                    onClick={() => setIsLoginView(!isLoginView)}
+                    className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                  >
+                    {isLoginView ? "Need an account? Register" : "Already have an account? Login"}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu */}
       <motion.button
-        className={`lg:hidden text-gray-600 p-2 rounded ${isMobileMenuOpen ? 'bg-white' : 'bg-transparent'}`}
+        className="lg:hidden text-gray-600 p-2 rounded fixed top-4 right-4 z-50"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        whileHover={{ scale: 1.3 }}
-        whileTap={{ scale: 0.8 }}
-        transition={{ duration: 0.3 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </motion.button>
 
-      {/* Mobile Menu Items */}
       {isMobileMenuOpen && (
         <motion.div
-          className="lg:hidden bg-white w-full absolute top-64 left-0 z-20"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
+          className="lg:hidden fixed inset-0 bg-white z-40 pt-16"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
         >
-          <ul className="flex flex-col space-y-4 py-4 px-6 text-gray-600">
-            <li><a href="/" className="hover:underline text-xl">Home</a></li>
-            <li><a href="/shop" className="hover:underline text-xl">Explore</a></li>
-            
-            <li 
-              className="relative"
-            >
-              <button 
-                onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-                className="text-xl hover:underline"
-              >
-                Shop ˅
-              </button>
-              {isMobileDropdownOpen && (
-                <div className="absolute left-0 bg-white border rounded shadow-lg w-80">
-                  <ul>
-                    <li className="px-4 py-2 font-bold">Men</li>
-                    <motion.li><a href="/shop/men/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                    <motion.li><a href="/shop/men/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                    <motion.li><a href="/shop/men/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                    <motion.li><a href="/shop/men/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
-                  </ul>
-                  <ul>
-                    <li className="px-4 py-2 font-bold">Women</li>
-                    <motion.li><a href="/shop/women/bags" className="block px-4 py-2 hover:bg-gray-100">Bags</a></motion.li>
-                    <motion.li><a href="/shop/women/belts" className="block px-4 py-2 hover:bg-gray-100">Belts</a></motion.li>
-                    <motion.li><a href="/shop/women/cosmetics" className="block px-4 py-2 hover:bg-gray-100">Cosmetics</a></motion.li>
-                    <motion.li><a href="/shop/women/watch" className="block px-4 py-2 hover:bg-gray-100">Watch</a></motion.li>
-                    <motion.li><a href="/shop/women/parfume" className="block px-4 py-2 hover:bg-gray-100">Parfume</a></motion.li>
-                  </ul>
-                </div>
+          <div className="p-4">
+            <ul className="space-y-4">
+              <li><Link to="/" className="text-xl">Home</Link></li>
+              <li><Link to="/shop" className="text-xl">Shop</Link></li>
+              <li><Link to="/about" className="text-xl">About</Link></li>
+              <li><Link to="/blog" className="text-xl">Blog</Link></li>
+              <li><Link to="/contact" className="text-xl">Contact</Link></li>
+              {user && (
+                <>
+                  <li><Link to="/profile" className="text-xl">Profile</Link></li>
+                  <li><Link to="/orders" className="text-xl">Orders</Link></li>
+                  <li>
+                    <button onClick={handleLogout} className="text-xl text-red-500">
+                      Logout
+                    </button>
+                  </li>
+                </>
               )}
-            </li>
-            <li><a href="#" className="hover:underline text-xl">About</a></li>
-            <li><a href="#" className="hover:underline text-xl">Blog</a></li>
-            <li><a href="#" className="hover:underline text-xl">Contact</a></li>
-          </ul>
+            </ul>
+          </div>
         </motion.div>
       )}
     </>

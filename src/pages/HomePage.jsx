@@ -34,7 +34,6 @@ import slidesData from '../data/slides.json';
 import Featured from '../layout/Featured';
 import Services from '../layout/Services';
 import Layout from '../layout/Featuredposts';
-import Header from '../layout/Header';
 
 const ProductCard = ({ title, department, originalPrice, discountedPrice, imageUrl }) => (
   
@@ -104,7 +103,6 @@ export default function HomePage() {
 
   return (
     <>
-    <Header/>
       {/* Hero Bölümü */}
       <div className="flex justify-center items-center py-8">
         
